@@ -1,4 +1,4 @@
-# 🇸🇳 Chatbot Wolof — Bot bu Wolof
+# 🇸🇳 Chatbot Wolof — Bot bu Wolof 2026
 
 Un chatbot conversationnel en **wolof** (avec support du code-switching wolof-français) construit avec [Rasa 3.x](https://rasa.com/).
 
@@ -111,4 +111,4 @@ Les contributions sont les bienvenues ! Vous pouvez :
 
 ---
 
-**Auteur** : [Papa Sega WADE](https://papasegawade.com) — IAS
+**Auteur** : [Papa Sega WADE](https://papasegawade.com) — Labs
