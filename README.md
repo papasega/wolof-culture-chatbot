@@ -1,4 +1,4 @@
-# 🇸🇳 Chatbot Wolof — Bot bu Wolof 2026
+# 🇸🇳 Chatbot Wolof — Bot bu Wolof 2020-2023
 
 Un chatbot conversationnel en **wolof** (avec support du code-switching wolof-français) construit avec [Rasa 3.x](https://rasa.com/).
 
