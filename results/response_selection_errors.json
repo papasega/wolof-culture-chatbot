@@ -1,0 +1,154 @@
+[
+  {
+    "text": "naka la mëne ame ndibël ngir jënd tiket fi ?",
+    "intent_response_key_target": "faq2/how_can_you_help",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "dama bëgga jënd tiket ngir tuki kasamas",
+    "intent_response_key_target": "faq2/how_can_you_help",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "fuñuy jaye tiket yi ?",
+    "intent_response_key_target": "faq2/how_can_you_help",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "ndax pass yi di nañu wañeku ?",
+    "intent_response_key_target": "faq2/how_can_you_help",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "tuki-bot.com ndax dana ma wañil pass bi ?",
+    "intent_response_key_target": "faq2/how_can_you_help",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "naka la sen jumtukay tuki-bot mëna dimbamlé tuki kat yi ?",
+    "intent_response_key_target": "faq2/how_can_you_help",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "ndax mën naa jënd tiket ci internet ?",
+    "intent_response_key_target": "faq2/how_can_you_help",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "naka lañuy wara def ngir tuki ?",
+    "intent_response_key_target": "faq2/how_can_you_help",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "ndax am na promotion ci tiket yi ?",
+    "intent_response_key_target": "faq2/how_can_you_help",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "bëgg naa tuki ndax mën nga ndimbal ma ?",
+    "intent_response_key_target": "faq2/how_can_you_help",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "ndax di gën jòxe lek si yoon bi ?",
+    "intent_response_key_target": "faq2/food_help",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "di na mëna jënd lek suma xife ?",
+    "intent_response_key_target": "faq2/food_help",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "tuki-bot dina jòxe lek ?",
+    "intent_response_key_target": "faq2/food_help",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "suma àge si bennen dëk ndax dina am luma mëna lek fofu ?",
+    "intent_response_key_target": "faq2/food_help",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "mba sen jëk yi yombu na rek ?",
+    "intent_response_key_target": "faq2/food_help",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "sen lek yan xetu ñam la ?",
+    "intent_response_key_target": "faq2/food_help",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "ndax lek yi halal la ?",
+    "intent_response_key_target": "faq2/food_help",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "ndax am na ñam bu neex ci avion bi ?",
+    "intent_response_key_target": "faq2/food_help",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "ndax mën naa tànn sama ñam ?",
+    "intent_response_key_target": "faq2/food_help",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  }
+]

@@ -1,0 +1,118 @@
+version: "3.1"
+
+rules:
+
+# --- BASIQUES ---
+- rule: Salutation
+  steps:
+    - intent: greet
+    - action: utter_greet
+
+- rule: Au revoir
+  steps:
+    - intent: goodbye
+    - action: utter_goodbye
+
+- rule: Remerciement
+  steps:
+    - intent: thank_you
+    - action: utter_thank_you
+
+- rule: Bot challenge
+  steps:
+    - intent: bot_challenge
+    - action: utter_iamabot
+
+- rule: OK confirmation
+  steps:
+    - intent: ok
+    - action: utter_ok
+
+# --- FAQ ---
+- rule: Répondre aux FAQ
+  steps:
+    - intent: faq
+    - action: utter_faq
+
+- rule: Répondre aux FAQ2
+  steps:
+    - intent: faq2
+    - action: utter_faq2
+
+# --- CHITCHAT ---
+- rule: Répondre au chitchat
+  steps:
+    - intent: chitchat
+    - action: utter_chitchat
+
+# --- THÉMATIQUES ---
+- rule: Teranga
+  steps:
+    - intent: ask_teranga
+    - action: utter_teranga
+
+- rule: Proverbe wolof
+  steps:
+    - intent: ask_proverb
+    - action: action_give_proverb
+
+- rule: Culture wolof
+  steps:
+    - intent: ask_wolof_culture
+    - action: utter_wolof_culture
+
+- rule: Famille wolof
+  steps:
+    - intent: ask_family
+    - action: utter_family
+
+- rule: Religion
+  steps:
+    - intent: ask_religion
+    - action: utter_religion
+
+- rule: Santé
+  steps:
+    - intent: ask_health
+    - action: utter_health
+
+- rule: Covid
+  steps:
+    - intent: ask_covid
+    - action: utter_covid
+
+- rule: Éducation
+  steps:
+    - intent: ask_education
+    - action: utter_education
+
+- rule: Nourriture wolof
+  steps:
+    - intent: ask_food
+    - action: utter_food
+
+- rule: Musique
+  steps:
+    - intent: ask_music
+    - action: utter_music
+
+- rule: Sénégal
+  steps:
+    - intent: ask_senegal
+    - action: utter_senegal
+
+- rule: Sport
+  steps:
+    - intent: ask_sport
+    - action: utter_sport
+
+- rule: Aide
+  steps:
+    - intent: ask_help
+    - action: utter_help
+
+# --- FALLBACK ---
+- rule: Fallback NLU
+  steps:
+    - intent: nlu_fallback
+    - action: utter_default

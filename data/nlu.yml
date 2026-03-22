@@ -1,0 +1,817 @@
+version: "3.1"
+nlu:
+
+# =============================================
+# SALUTATIONS & POLITESSE
+# =============================================
+
+- intent: greet
+  examples: |
+    - na nga def
+    - salam
+    - salamlekum
+    - na ngen def
+    - ñu tàmbali
+    - ñu tàmbali !
+    - acà
+    - acà bok
+    - assalamu haleykum
+    - demal ci tàmbali bi
+    - salamu haleykum
+    - na nga def ci jàmm
+    - jàmm nga am
+    - jërejëf ci jàmm gi
+    - na nga def way
+    - hey na nga def
+    - wa salam
+    - mangi fi rek
+    - asalaamaalekum
+    - wa alekum salam
+    - nanga def ci suba si
+    - ndekaan bi naka
+    - jamm ak jàmm
+    - jàmm rekk
+    - ana waa kër ga
+    - naka waa kër gi
+    - naka la jëkër ji
+    - naka la jabar ji
+
+- intent: goodbye
+  examples: |
+    - ñu yendo ci jàam
+    - ba si kanam
+    - ñu fanan ak jàam
+    - ñu fanan ci jàam
+    - ba suba
+    - ñu def nonu
+    - ba elëk
+    - amal jàam
+    - ba fan yi
+    - amal jàam ngu bari
+    - nekal ci jàam
+    - nekal si jàam way
+    - ba beneen yoon
+    - yàlla nanu ci jàmm
+    - ba ci kanam
+    - jox ma jàmm
+    - neexal ci kër gi
+    - ba suba inshallah
+    - maa ngi dem
+    - dem na ko
+    - fananal ak jàmm
+    - yàlla na nu ci jàmm
+
+- intent: thank_you
+  examples: |
+    - jërejëf
+    - jërejëf lool
+    - baax na jërejëf
+    - mangi la sant
+    - sant bu baax
+    - jërejëf ci sa mbax mi
+    - dëna la sant
+    - yàlla jërejëf
+    - baal ma jërejëf
+    - jërejëf ci lool
+    - ndimbal la jërejëf
+    - sa dimbal bi ma neex lool
+    - dama la gërëm
+    - gërëm na la lool
+    - jërejëf ci sa wax yi
+
+- intent: affirm
+  examples: |
+    - wa
+    - waaw
+    - wa waaw
+    - waaw kañ
+    - waaw kãn nak
+    - nonu la
+    - waaw dëgg la
+    - am na solo
+    - bën na
+    - nonu nak
+    - waaw way
+    - waaw lolu dëgg la
+    - dëgg nga
+    - waaw tey
+    - dëgg rekk
+    - waaw mën na
+
+- intent: deny
+  examples: |
+    - dèedèet
+    - dèet
+    - mùku
+    - dèet way
+    - mùk ci àdina
+    - xamu ma
+    - bëgguma
+    - dèet kañ
+    - du lolu dè
+    - dèet du nonu
+    - du dëgg
+    - dèet baal ma
+    - mënuma
+    - mùku dè
+    - du ma bëgg
+    - amul solo
+    - lolu dëggul
+
+# =============================================
+# HUMEUR & SENTIMENTS
+# =============================================
+
+- intent: mood_great
+  examples: |
+    - baxna
+    - ma sha Allah
+    - yemena de
+    - ma ngi meleni buur
+    - sant bu baax
+    - ma sha Allah !
+    - tawfèx
+    - tawfèx bu baax
+    - mbek te rek
+    - bëgg rek way
+    - kontan te
+    - kontan rek xana
+    - bëgg bu baax way
+    - li ka neex way
+    - alhamdulilah ma ngi fi
+    - yàlla nako yàlla baax na
+    - bés bi neex na lool
+    - ma ngi ci kàttan
+    - xel mi dafa sédd
+    - dama neex tay
+    - neex na lool
+    - yàlla baax na
+    - sama xol neex na
+
+- intent: mood_unhappy
+  examples: |
+    - tay sama bès bi nexul
+    - dama fasu tay
+    - dama xawa tayal tay
+    - dama am mbetel tay
+    - mbetel gu rëy
+    - sama yaram bi dafa sof tay
+    - mbetel
+    - doyena war
+    - nakaru xol
+    - sama xol mo nakari
+    - dama am lu tis
+    - mbir muma tis lool way
+    - li de dis nama lool
+    - sama xol bi nakari na
+    - dama tisé
+    - xel mi dafa tàng
+    - neexul tay
+    - dama am solo bu bari
+    - tay bés bi baaxul
+    - dama am kàttan bu yàgg
+
+# =============================================
+# BOT IDENTITY
+# =============================================
+
+- intent: bot_challenge
+  examples: |
+    - nda yaw robot nga ?
+    - ndax yaw nit nga ?
+    - nda ab robot lay waxal ?
+    - ndax nit momay tontu ?
+    - ndax yaw chatbot nga ?
+    - yaw kan nga ?
+    - ndax yaw ordinateur nga ?
+    - ndax program la ?
+    - ndax nit la moom di tontu ?
+    - yaw naka ngay liggéey ?
+    - ndax ab intelligence artificielle nga ?
+    - kon robot nga dè ?
+    - man de xamu ma ndax nit la wala robot
+    - yaw sa bopp naka la ?
+
+# =============================================
+# CONFIRMATION / OK
+# =============================================
+
+- intent: ok
+  examples: |
+    - ok
+    - baxe na
+    - man de parena
+    - wa baax na
+    - ok wa baax na
+    - dëgg rek
+    - yem na
+    - nonu rek
+    - baax na nak
+    - pare na
+    - waaw baax na
+    - ok jërejëf
+    - yem na nak
+
+# =============================================
+# CULTURE WOLOF & TERANGA
+# =============================================
+
+- intent: ask_teranga
+  examples: |
+    - lan moy teranga ?
+    - teranga moy lan ?
+    - wax ma ci teranga
+    - ndax mën nga ma wax ci teranga ?
+    - naka la teranga di mël ?
+    - lu moy teranga ci wolof ?
+    - teranga ci senegaal naka la ?
+    - xam nga teranga ?
+    - naka ñuy jëfandikoo baat bi teranga ?
+    - teranga ci aada wolof naka la ?
+    - wax ma lu jëm ci teranga
+    - naka la sénégalais yi di teranga ?
+    - teranga ci kër gi naka la mël ?
+    - lan mooy njëriñ teranga ?
+
+- intent: ask_proverb
+  examples: |
+    - jox ma ab lëbbu wolof
+    - wax ma ab baat bu xam-xam
+    - am na ab lëbbu wolof ?
+    - ndax xam nga lëbb yi ?
+    - jox ma ab lëbb
+    - wax ma ab lëbb bu am solo
+    - bëgg naa dëglu ab lëbb
+    - ndax am nga lëbbu wolof ?
+    - lëbb yu Wolof yi, jox ma benn
+    - bëgg naa xam lëbb yi
+    - jox ma ab baat bu mag yi
+    - wax ma lu mag yi daan wax
+    - am na ab kàddu bu xam xam ?
+    - lëbbu wolof yu neex yi
+
+- intent: ask_wolof_culture
+  examples: |
+    - wax ma ci aada wolof yi
+    - naka la aadayu wolof yi di mël ?
+    - lu moy cosaan wolof ?
+    - wax ma ci cosaan
+    - ndax mën nga ma wax ci cosaan wolof ?
+    - aada wolof yi naka ñuy mël ?
+    - cosaan wolof yi naka lañu ?
+    - naka la wolof yi di defar seen céet ?
+    - lan mooy xew-xew yi ci wolof ?
+    - naka lañuy def ngente ci wolof ?
+    - naka la mbokk yi di mël ci wolof ?
+    - lan mooy kersa ci wolof ?
+    - wax ma ci sutura
+    - naka la ndomba yi di mël ?
+    - lan mooy fulla ci wolof ?
+
+- intent: ask_family
+  examples: |
+    - lan mooy mbokk ci wolof ?
+    - naka la waa kër gi di mël ci wolof ?
+    - ndax mën nga ma wax ci mbokk yi ?
+    - naka lañuy wax ci jabar ?
+    - naka lañuy wax ci jëkkër ?
+    - lan mooy njaboot ?
+    - wax ma ci njaboot wolof
+    - naka la doom yi di def seen mag yi ?
+    - ndax am na kersa ci waa kër gi ?
+    - naka la jigéen yi di liggéey ci kër gi ?
+    - lan mooy solo mag yi ci wolof ?
+    - naka la nit ñi di jokko ak seen mbokk ?
+    - wax ma ci yaay ak baay ci wolof
+
+# =============================================
+# RELIGION & SPIRITUALITÉ
+# =============================================
+
+- intent: ask_religion
+  examples: |
+    - ban diine la wolof yi di topp ?
+    - ndax wolof yi musulman lañu ?
+    - wax ma ci diine ci senegaal
+    - naka la wolof yi di jëfandikoo seen diine ?
+    - lan mooy gamou ?
+    - lan mooy magal ?
+    - naka lañuy julli ?
+    - kañ la koor gi di tàmbali ?
+    - wax ma ci tabaski
+    - wax ma ci korité
+    - lan mooy tajabone ?
+    - naka la wolof yi di def seen tabaski ?
+    - ndax am na sëriñ ci wolof ?
+    - wax ma ci daara yi
+
+# =============================================
+# SANTÉ
+# =============================================
+
+- intent: ask_health
+  examples: |
+    - naka lañuy wara fey seen yaram ?
+    - ndax am na ngir wergu yaram ?
+    - suma feebar naka lañuy def ?
+    - lañuy ñam ngir am wergu yaram ?
+    - ndax am na daara-xeleet ngir yaram ?
+    - wax ma ci safara yi ci wolof
+    - naka la nit ñi di jàppale seen yaram ?
+    - ndax am na garab bu baax ngir sibiru ?
+    - feebar ji naka lañuy faj ?
+    - lañuy def su nu feebar ?
+    - ndax mën nga ma wax ci faju yaram ?
+    - naka lañuy wara lekk ngir am kàttan ?
+    - wax ma ci garabu àddina
+
+- intent: ask_covid
+  examples: |
+    - lan mooy covid ?
+    - naka lañuy mën daane ak covid ?
+    - ndax covid bi des na ?
+    - naka lañuy wara def ngir bañ covid ?
+    - wax ma ci covid ci senegaal
+    - ndax lañuy wara piiki ?
+    - naka la covid di jëm ?
+    - ndax dañu wara àkk masak bi ?
+
+# =============================================
+# ÉDUCATION
+# =============================================
+
+- intent: ask_education
+  examples: |
+    - naka la jàngu yi di dem ci senegaal ?
+    - ndax am na ekool bu wolof ?
+    - naka lañuy mën jàng wolof ?
+    - wax ma ci jàngu ci senegaal
+    - ndax am na iniversite ci senegaal ?
+    - naka la doom yi di jàng ?
+    - wax ma ci daara yi
+    - ndax am na bëkkëneek ci tuki ?
+    - naka lañuy jàng baat bu wolof ?
+    - ndax mën naa jàng ci internet ?
+    - wax ma ci jàng wolof
+    - naka la ekool yi di mël ci senegaal ?
+    - ndax am na am liggéey bu am jàngu wolof ?
+
+# =============================================
+# MÉTÉO / SAISONS
+# =============================================
+
+- intent: faq/ask_weather
+  examples: |
+    - tay jawu ji numu mel ?
+    - ba tàngul tay rek ?
+    - ba tàngul tay ?
+    - ba mboyawul si biti ?
+    - ba tàngul si biir kër ngi ?
+    - si biir ba tàngul ?
+    - nga bal ma ndax mën nga ma wax ni jawu ji mel tay ?
+    - bés ñu ma gëna nex moy bés ñu naj bi di gën ci ndakaru
+    - tay ndax dina taw ?
+    - naka la jawu ji di mël tay ?
+    - ndax dafa sedd tay ?
+    - naka la tëmp bi di mël ?
+    - ndax nawet la ?
+    - ndax noor la ?
+    - jawu ji baax na tay ?
+    - ndax bés bi dina melni tëmp ?
+
+# =============================================
+# IDENTITÉ DU BOT (FAQ)
+# =============================================
+
+- intent: faq/ask_name
+  examples: |
+    - no tudu ?
+    - lan moy sa tur ?
+    - luy sa tur ?
+    - no sant ?
+    - lan moy sa sant ?
+    - ndax mëna xam sa tur ?
+    - naka lan lay wowe ?
+    - nit yi nan lan lay wowe ?
+    - no tude sa bop ?
+    - yaw kan nga ?
+    - naka lañu la tudde ?
+    - wax ma sa tur
+    - ndax am nga tur ?
+    - lañu la tudde ?
+
+- intent: faq/ask_capabilities
+  examples: |
+    - lan nga mën def ?
+    - lan lay mën ?
+    - lan la sa liggéey ?
+    - ndax mën nga ndimbal ma ?
+    - naka nga mën ndimbal ma ?
+    - lu nga xam def ?
+    - yaw lan la nit ñi mën la laaj ?
+    - lu ngay mën wax ma ?
+    - ndax mën nga tontu laaj yu bari ?
+    - wax ma lu ngay mën def
+
+- intent: faq/ask_language
+  examples: |
+    - ban làkk ngay wax ?
+    - ndax mën nga wax wolof ?
+    - ndax dëgg nga wolof ?
+    - ndax mën nga wax ci yeneen làkk ?
+    - ban làkk la gëna xam ?
+    - ndax mën nga wax français ?
+    - yaw wolof rekk ngay wax ?
+    - ndax mën naa la wax ci anglais ?
+
+- intent: faq/ask_creator
+  examples: |
+    - kan moo la defar ?
+    - kan mooy sa borom ?
+    - kan la defar yaw ?
+    - ndax xam nga kan la defar ?
+    - wax ma kan mooy sa créateur
+    - kan moo la créer ?
+    - yaw kan lay am ?
+    - naka lañu la defar ?
+
+# =============================================
+# SERVICES / VOYAGE (TUKI-BOT)
+# =============================================
+
+- intent: faq2/how_can_you_help
+  examples: |
+    - naka la mëne ame ndibël ngir jënd tiket fi ?
+    - dama bëgga jënd tiket ngir tuki kasamas
+    - fuñuy jaye tiket yi ?
+    - ndax pass yi di nañu wañeku ?
+    - tuki-bot.com ndax dana ma wañil pass bi ?
+    - naka la sen jumtukay tuki-bot mëna dimbamlé tuki kat yi ?
+    - ndax mën naa jënd tiket ci internet ?
+    - naka lañuy wara def ngir tuki ?
+    - ndax am na promotion ci tiket yi ?
+    - bëgg naa tuki ndax mën nga ndimbal ma ?
+
+- intent: faq2/food_help
+  examples: |
+    - ndax di gën jòxe lek si yoon bi ?
+    - di na mëna jënd lek suma xife ?
+    - tuki-bot dina jòxe lek ?
+    - suma àge si bennen dëk ndax dina am luma mëna lek fofu ?
+    - mba sen jëk yi yombu na rek ?
+    - sen lek yan xetu ñam la ?
+    - ndax lek yi halal la ?
+    - ndax am na ñam bu neex ci avion bi ?
+    - ndax mën naa tànn sama ñam ?
+
+# =============================================
+# NOURRITURE WOLOF
+# =============================================
+
+- intent: ask_food
+  examples: |
+    - lan mooy ceebu jën ?
+    - naka lañuy togg ceebu jën ?
+    - wax ma ci ñam wolof yi
+    - lan mooy thiéboudiène ?
+    - naka lañuy togg yassa ?
+    - wax ma ci mafé
+    - lan mooy thiéré
+    - ndax xam nga togg ?
+    - naka lañuy def domoda ?
+    - wax ma ci ñam yi ci senegaal
+    - lan mooy soupou kandia ?
+    - naka lañuy togg lakh ?
+    - ndax am na ñam bu neex ci wolof ?
+    - lan la wolof yi gëna bëgg lek ?
+
+# =============================================
+# MUSIQUE & ART
+# =============================================
+
+- intent: ask_music
+  examples: |
+    - wax ma ci mbalax
+    - lan mooy mbalax ?
+    - kan mooy Youssou Ndour ?
+    - ndax xam nga ci musiik wolof ?
+    - wax ma ci sabar
+    - naka la sabar di mël ?
+    - lan mooy tama ?
+    - wax ma ci instrument wolof yi
+    - ndax am na artiste wolof yu xam-xam ?
+    - naka la mbalax di dem ?
+    - wax ma ci woy wolof yi
+    - kan mooy Baaba Maal ?
+    - naka la nit ñi di fecc ci wolof ?
+
+# =============================================
+# GÉOGRAPHIE SÉNÉGAL
+# =============================================
+
+- intent: ask_senegal
+  examples: |
+    - wax ma ci senegaal
+    - ndakaru mooy lan ?
+    - naka la senegaal di mël ?
+    - ñaata miliyoŋ nit lañu ci senegaal ?
+    - wax ma ci réjiyoŋ yi ci senegaal
+    - lan mooy gorée ?
+    - wax ma ci saint-louis
+    - ndax xam nga senegaal ?
+    - lan mooy casamance ?
+    - naka la ndakaru di mël ?
+    - wax ma ci dëkk yi ci senegaal
+    - ndax am na paark ci senegaal ?
+    - wax ma ci lompoul
+    - lan mooy lac rose ?
+
+# =============================================
+# SPORT
+# =============================================
+
+- intent: ask_sport
+  examples: |
+    - wax ma ci làmb ci senegaal
+    - ndax xam nga ci làmb ?
+    - lan mooy làmb ?
+    - naka la làmb di mël ?
+    - wax ma ci ekiip senegaal bi
+    - ndax senegaal am na ekiip futbal ?
+    - naka la futbal di dem ci senegaal ?
+    - wax ma ci laamb wolof
+    - kan mooy Sadio Mané ?
+    - ndax senegaal gën na coupe d'afrique ?
+    - naka la bàtaarë yi di dem ?
+    - wax ma ci sport ci senegaal
+
+# =============================================
+# CHITCHAT / CONVERSATION LIBRE
+# =============================================
+
+- intent: chitchat/ask_howdoing
+  examples: |
+    - naka ngay jëm ?
+    - naka sa bés bi di dem ?
+    - ana sa xel ?
+    - naka sa yaram ?
+    - ndax baax nga ?
+    - yow naka ngay dem ?
+    - naka la sa liggéey di dem ?
+    - ndax kontaan nga ?
+
+- intent: chitchat/tell_joke
+  examples: |
+    - wax ma ab rëy
+    - ndax xam nga rëy ?
+    - jox ma ab baat bu rëy
+    - bëgg naa rëy
+    - wax ma lu ma rëy
+    - def ma rëy tuuti
+    - am nga baat bu rëy ?
+    - ndax mën nga def ma rëy ?
+
+- intent: chitchat/ask_time
+  examples: |
+    - ñaata waxt mooy ?
+    - ban waxt la tay ?
+    - waxt bi ñaata la ?
+    - ndax xam nga waxt bi ?
+    - wax ma waxt bi
+    - kañ moy waxt bi ?
+
+# =============================================
+# DEMANDE D'AIDE
+# =============================================
+
+- intent: ask_help
+  examples: |
+    - ndimbal ma
+    - bëgg naa ndimbal
+    - ndax mën nga ndimbal ma ?
+    - maa ngi soxla ndimbal
+    - naka la mëna am ndimbal ?
+    - jox ma ndimbal tuuti
+    - ndimbal ma ngir yàlla
+    - suma la neex ndimbal ma
+    - bëgg naa xam naka lañuy def
+    - wax ma naka lañuy jëfandikoo bi
+
+# =============================================
+# HORS SUJET / NLU FALLBACK
+# =============================================
+
+- intent: nlu_fallback
+  examples: |
+    - asdfghjkl
+    - qwerty
+    - 12345
+    - ...
+    - ???
+    - blablabla
+    - xxxxxxx
+
+# =============================================
+# CODE-SWITCHING WOLOF-FRANÇAIS
+# (Très courant dans la communication quotidienne au Sénégal)
+# =============================================
+
+- intent: greet
+  examples: |
+    - bonjour na nga def
+    - salut nanga def
+    - hey salut way
+    - bonsoir na ngen def
+    - coucou na nga def way
+    - bonjour jàmm rekk
+
+- intent: goodbye
+  examples: |
+    - au revoir ba ci kanam
+    - bonne nuit fananal ak jàmm
+    - à demain ba suba
+    - bye bye ba beneen yoon
+    - à plus ba ci kanam way
+    - bonne soirée neexal ci ngoon si
+
+- intent: thank_you
+  examples: |
+    - merci jërejëf
+    - merci beaucoup jërejëf lool
+    - merci ci sa ndimbal bi
+    - c'est gentil jërejëf
+    - merci baal ma
+    - jërejëf c'est vraiment gentil
+
+- intent: mood_great
+  examples: |
+    - ça va très bien alhamdulilah
+    - je suis content kontaan naa
+    - c'est parfait baax na lool
+    - super bés bi neex na
+    - trop bien man de kontaan naa
+    - excellent ma sha Allah
+
+- intent: mood_unhappy
+  examples: |
+    - ça va pas tay bés bi baaxul
+    - je suis triste dama tisé
+    - c'est pas bien neexul dè
+    - j'ai des problèmes dama am solo
+    - je suis fatigué dama sonnal
+    - c'est compliqué way dafa jafe
+
+- intent: ask_teranga
+  examples: |
+    - c'est quoi la teranga exactement ?
+    - teranga ça veut dire quoi en wolof ?
+    - explique moi le concept de teranga
+    - wax ma c'est quoi teranga
+    - la teranga sénégalaise naka la ?
+
+- intent: ask_proverb
+  examples: |
+    - donne moi un proverbe wolof
+    - jox ma un proverbe
+    - un dicton wolof s'il te plaît
+    - wax ma un proverbe bu neex
+    - est-ce que tu connais des proverbes wolof ?
+    - ndax am nga des proverbes ?
+
+- intent: ask_wolof_culture
+  examples: |
+    - parle moi de la culture wolof
+    - la culture sénégalaise naka la ?
+    - wax ma ci la tradition wolof
+    - c'est quoi les coutumes wolof ?
+    - naka la les traditions wolof di mël ?
+    - explique moi les cérémonies wolof
+
+- intent: ask_food
+  examples: |
+    - c'est quoi le thiéboudiène ?
+    - comment on fait le ceebu jën ?
+    - wax ma ci la cuisine sénégalaise
+    - naka lañuy préparer le yassa ?
+    - quels sont les plats typiques wolof ?
+    - le mafé naka lañuy ko togg ?
+    - je veux savoir les recettes wolof
+
+- intent: ask_music
+  examples: |
+    - c'est quoi le mbalax ?
+    - parle moi de la musique sénégalaise
+    - wax ma ci Youssou Ndour
+    - naka la le mbalax di mël ?
+    - les instruments de musique wolof lan lañu ?
+    - le sabar c'est quoi exactement ?
+
+- intent: ask_senegal
+  examples: |
+    - parle moi du Sénégal
+    - c'est quoi le Sénégal ?
+    - wax ma ci le pays du Sénégal
+    - naka la le Sénégal di mël ?
+    - combien d'habitants au Sénégal ?
+    - les régions du Sénégal lan lañu ?
+
+- intent: ask_sport
+  examples: |
+    - c'est quoi la lutte sénégalaise ?
+    - parle moi du sport au Sénégal
+    - le làmb c'est quoi ?
+    - wax ma ci le football sénégalais
+    - est-ce que le Sénégal a gagné la CAN ?
+    - naka la le sport di dem ci Sénégal ?
+
+- intent: ask_health
+  examples: |
+    - comment rester en bonne santé ?
+    - naka lañuy garder la santé ?
+    - wax ma ci la santé au Sénégal
+    - les hôpitaux au Sénégal naka lañu ?
+    - comment se soigner au Sénégal ?
+    - la médecine traditionnelle naka la ?
+
+- intent: ask_education
+  examples: |
+    - comment est l'éducation au Sénégal ?
+    - naka la le système scolaire di mël ?
+    - wax ma ci les écoles au Sénégal
+    - est-ce qu'on peut apprendre le wolof à l'école ?
+    - les universités au Sénégal lan lañu ?
+    - parle moi de l'éducation
+
+- intent: ask_religion
+  examples: |
+    - quelle religion au Sénégal ?
+    - parle moi de la religion au Sénégal
+    - c'est quoi le magal de Touba ?
+    - naka la la religion di mël ci Sénégal ?
+    - le gamou c'est quoi ?
+    - wax ma ci les confréries
+
+- intent: ask_family
+  examples: |
+    - c'est quoi la famille en wolof ?
+    - naka la la famille di mël ci wolof ?
+    - parle moi de la famille wolof
+    - les liens familiaux naka lañu ci wolof ?
+    - wax ma ci le njaboot
+
+- intent: bot_challenge
+  examples: |
+    - est-ce que tu es un robot ?
+    - t'es un bot ou un humain ?
+    - ndax yaw tu es un robot ?
+    - c'est une intelligence artificielle qui parle ?
+    - tu es un vrai humain ou un programme ?
+
+- intent: ask_help
+  examples: |
+    - aide moi s'il te plaît
+    - j'ai besoin d'aide
+    - ndimbal ma please
+    - comment tu peux m'aider ?
+    - wax ma naka tu peux m'aider
+    - help me ndimbal ma
+
+- intent: affirm
+  examples: |
+    - oui waaw
+    - yes waaw
+    - oui c'est ça nonu la
+    - exactement dëgg la
+    - tout à fait waaw dëgg rek
+
+- intent: deny
+  examples: |
+    - non dèedèet
+    - non c'est pas ça
+    - pas du tout mùku
+    - non merci bëgguma
+    - c'est faux du dëgg
+
+- intent: ok
+  examples: |
+    - ok c'est bon baax na
+    - d'accord ok
+    - parfait baax na nak
+    - c'est noté ok
+    - très bien yem na
+
+- intent: chitchat/ask_howdoing
+  examples: |
+    - comment tu vas ?
+    - ça va ?
+    - naka ngay aller ?
+    - tu vas bien ?
+    - comment ça se passe ?
+
+- intent: chitchat/tell_joke
+  examples: |
+    - raconte moi une blague
+    - dis moi quelque chose de drôle
+    - fais moi rire way
+    - une blague en wolof s'il te plaît
+    - wax ma un truc marrant

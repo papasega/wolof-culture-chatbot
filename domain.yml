@@ -1,0 +1,320 @@
+version: "3.1"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+intents:
+  - greet
+  - goodbye
+  - thank_you
+  - affirm
+  - deny
+  - ok
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - ask_teranga
+  - ask_proverb
+  - ask_wolof_culture
+  - ask_family
+  - ask_religion
+  - ask_health
+  - ask_covid
+  - ask_education
+  - ask_food
+  - ask_music
+  - ask_senegal
+  - ask_sport
+  - ask_help
+  - faq:
+      is_retrieval_intent: true
+  - faq2:
+      is_retrieval_intent: true
+  - chitchat:
+      is_retrieval_intent: true
+  - nlu_fallback
+
+entities:
+  - topic
+  - location
+
+slots:
+  topic:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: topic
+  location:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: location
+
+responses:
+  # --- SALUTATIONS ---
+  utter_greet:
+    - text: "Wa jàmbar ! Na nga def nak ?"
+    - text: "Salam ! Naka sa bés bi di dem ?"
+    - text: "Assalamu haleykum ! Mangi fi, yow naka ?"
+    - text: "Na nga def ! Bëgg naa xam naka ngay jëm."
+    - text: "Jàmm rekk ! Ana waa kër gi ?"
+
+  utter_goodbye:
+    - text: "Ba beneen yoon inshallah !"
+    - text: "Nekal ci jàmm ! Ba ci kanam."
+    - text: "Yàlla nanu ci jàmm. Ba suba !"
+    - text: "Fananal ak jàmm ! Ba beneen yoon."
+    - text: "Maa ngi dem, ba ci kanam way !"
+
+  utter_thank_you:
+    - text: "Amul solo ! Mangi fii ngir ndimbal la."
+    - text: "Jërejëf ci sa wax yi ! Kontaan naa."
+    - text: "Amul benn jafe-jafe, mangi fi ngir yow."
+
+  # --- HUMEUR ---
+  utter_happy:
+    - text: "Ah waaw kay way, dama kontaan dëgg ! 😊"
+    - text: "Alhamdulilah ! Neex na dëglu lolu."
+    - text: "Yàlla baax na ! Bés bi baax na nak."
+
+  utter_cheer_up:
+    - text: "Bul ñàkk jëmm ! Sénégal yi daan wax : 'Lu tey metti, elëk dina gëna baax.'"
+    - text: "Yàlla nako yàlla, dina baax. Natal bi mënes na woyofal sa tisa nge :"
+      image: https://i.imgur.com/nGF1K8f.jpg
+    - text: "Xol bi dafa wara am ngëm. Mag yi daan wax : 'Muñ mooy garab gu ñuul.'"
+
+  utter_did_that_help:
+    - text: "Ndax lolu dimbali nala ?"
+    - text: "Ndax sa xol sédd na tuuti ?"
+    - text: "Ndax neex na tuuti ?"
+
+  # --- BOT ---
+  utter_iamabot:
+    - text: "Waaw, ab chatbot laa. PSW bu IAS moo ma defar ngir wax wolof ak nit ñi !"
+    - text: "Man de ab robot laa, waye dama bëgg ndimbal la ci wolof !"
+    - text: "Ab programme laa, defar ngir wax ak yow ci wolof."
+
+  utter_ok:
+    - text: "Acca bok, nako dal :)"
+    - text: "Baax na ! Ndax am nga lenn yeneen ?"
+    - text: "Ok ! Su la neex laaj ma lenn yeneen."
+
+  # --- TERANGA ---
+  utter_teranga:
+    - text: >
+        Teranga mooy njàmbaar gu am solo lool ci wolof. Mooy wàcce-teg, mooy
+        jàppale, mooy jottali. Ci Senegaal, teranga moy lu ñu gëna am sutura.
+        Su ab gànjab ñëwee sa kër, danga wara ko jot ci baax, jox ko lekk,
+        jox ko fanaanug. Teranga mooy dëkk bi !
+    - text: >
+        Teranga ci wolof, mooy hospitalité bu am njariñ. Senegaal ñu ko tudde
+        « reew teranga » ndax sénégaalais yi dañuy gëna xam jottali nit ñi.
+        Su ngay dem Senegaal, dinga xam ni nit ñi dañuy la jot ak neex.
+
+  # --- PROVERBES ---
+  utter_proverb:
+    - text: "🌿 Lëbb : « Ku muñ muññ na. » — Ki muñ, moo gëna am njariñ."
+    - text: "🌿 Lëbb : « Ndey-jigéen du sàcc doom. » — Yaay du wàcce doom ji."
+    - text: "🌿 Lëbb : « Góor du gis tànk, du ñàkk yoon. » — Góor bu am xel mënul rëcc."
+    - text: "🌿 Lëbb : « Bul toog foofu, dinga am gerte. » — Bul toog, liggéeyal sa bopp."
+    - text: "🌿 Lëbb : « Lu nekk ci biir ndox, xam na luy daanu. » — Ku am xam-xam xam na fu mu jëm."
+    - text: "🌿 Lëbb : « Nit nit ay garab am. » — Nit ki moy garab nit ki."
+
+  # --- CULTURE WOLOF ---
+  utter_wolof_culture:
+    - text: >
+        Cosaan wolof yi am na solo bu bari. Am na ngente (baptême), céet (mariage),
+        ndomba (initiation), ak xew-xew yu bari. Wolof yi dañuy gëna am teranga,
+        kersa (pudeur) ak sutura (discrétion). Mbokk yi dañuy am solo lool
+        ci aada wolof.
+    - text: >
+        Ci wolof, aada yi dañu am njariñ bu bari. Kersa moy wàcce sa bopp
+        ci kanam nit ñi. Sutura moy bàyyi lu nit ki am ci biir waa kër gi.
+        Njaboot (famille élargie) dafa am solo lool ci dundu wolof.
+
+  # --- FAMILLE ---
+  utter_family:
+    - text: >
+        Ci wolof, njaboot (famille élargie) dafa am solo lool. Mag yi
+        (les aînés) dañu leen wara aartu ak jëm ci seen kàddu. Yaay (mère)
+        ak baay (père) dañu am solo bu rëy. Wolof yi daan wax :
+        « Nit nit ay garab am » — nit ki moy garab nit ki.
+    - text: >
+        Mbokk ci wolof mooy waa kër gi yépp : yaay, baay, maam, rakk,
+        mag, nijaay, baadoolo... Ci wolof, mbokk yi dañuy jokko ak bëgg-bëgg
+        te dañuy jàppale.
+
+  # --- RELIGION ---
+  utter_religion:
+    - text: >
+        Ci Senegaal, lu ëpp ci nit ñi musulman lañu (environ 95%).
+        Am na gamou (ci Tivaouane), magal (ci Touba), ak appel (ci Ndiassane).
+        Tabaski ak korité dañu am solo lool. Sëriñ yi dañu am njariñ bu bari
+        ci dundu wolof.
+    - text: >
+        Wolof yi dañuy gëna topp Islaam. Koor (Ramadan), julli, ak jàng
+        Alxuraan dañu am solo ci seen dundu. Am na it kërëstaan yi ak nit ñu
+        topp cosaan. Ci Senegaal, diine yépp dañuy mën dëkk àdduna.
+
+  # --- SANTÉ ---
+  utter_health:
+    - text: >
+        Wergu yaram dafa am solo lool. Danga wara lekk lu sell, naan ndox
+        bu bari, ak exercice saa su nekk. Su nga feebar, dem ci clinique
+        walla hôpital bi. Bul fàtte piiki yi ngir doom yi.
+    - text: >
+        Ci Senegaal, am na hôpital ak poste de santé yu bari. Danga wara
+        dem ci tubab bi su nga feebar. Am na it garabu àddina yu baax,
+        waye wara nga laaj tubab bi.
+
+  utter_covid:
+    - text: >
+        Covid-19 mooy ab feebar bu am xew-xew. Ngir daane ak moom :
+        raxas sa loxo saa su nekk, teg masak bi, ak toogal génn ci nit ñi.
+        Su nga am toux walla tàng, dem ci poste de santé bi.
+
+  # --- ÉDUCATION ---
+  utter_education:
+    - text: >
+        Ci Senegaal, jàngu dafa am solo lool. Am na ekool ci làkku
+        français, waye am na it daara yi ñuy jàng Alxuraan. Tay,
+        dañuy jéema jàng wolof it ci ekool yi. Université Cheikh Anta Diop
+        mooy université bu mag ci Senegaal.
+
+  # --- NOURRITURE ---
+  utter_food:
+    - text: >
+        Ñam wolof yi dañu neex lool ! Ceebu jën (thiéboudiène) mooy
+        ñam nasiyonaal bi — ceebu jën bu weex ak bu xonq. Am na it :
+        yassa (poulet walla jën), mafé, domoda, soupou kandia, thiéré
+        (couscous wolof), lakh... Nit ñi dañuy lek ci boll bu mag
+        waa kër gi yépp.
+    - text: >
+        Ci Senegaal, dañuy gëna lekk ceebu jën ci njël bi (déjeuner).
+        Ci ngoon, am na fondé walla lakh. Ndogou ci koor, dañuy def
+        café Touba ak mburu ak pàtt.
+
+  # --- MUSIQUE ---
+  utter_music:
+    - text: >
+        Mbalax mooy musiik nasiyonaal Senegaal bi ! Youssou Ndour moo ko
+        gëna xam wàllale. Sabar mooy fecc bu mag ci wolof, ak tama (tambour
+        d'aisselle) mooy instrument bu am solo. Am na it artiste yu
+        nekk ni Baaba Maal, Wally Seck, Viviane, ak Coumba Gawlo.
+    - text: >
+        Mbalax dafa jóge ci sabar (rythme traditionnel wolof). Tama bi
+        (talking drum) moo ko gëna am solo. Ci Senegaal, fecc ak woy
+        dañu am solo ci xew-xew yi yépp : ngente, céet, sabar...
+
+  # --- SÉNÉGAL ---
+  utter_senegal:
+    - text: >
+        Senegaal mooy ab reew ci Afrique de l'Ouest. Ndakaru (Dakar) mooy
+        sa capitale. Am na environ 17 miliyoŋ nit. Senegaal dañu ko tudde
+        « Reew Teranga ». Am na 14 réjiyoŋ : Ndakaru, Thiès, Saint-Louis,
+        Ziguinchor, Kaolack, Fatick, Tambacounda, Kédougou, Kolda, Sédhiou,
+        Matam, Louga, Diourbel ak Kaffrine.
+
+  # --- SPORT ---
+  utter_sport:
+    - text: >
+        Ci Senegaal, làmb (lutte sénégalaise) moo gëna am solo ci sport
+        tradisiyoneel yi. Futbal it dafa am solo lool — ekiip nasiyonaal bi
+        (Lions de la Téranga) dañu gën Coupe d'Afrique ci 2022 ! Sadio Mané
+        moo gëna am tur ci futbal Senegaal.
+
+  # --- AIDE ---
+  utter_help:
+    - text: >
+        Mangi fi ngir ndimbal la ! Mën nga ma laaj ci :
+        - 🏠 Cosaan ak aada wolof
+        - 🌿 Lëbbu wolof (proverbes)
+        - 🍲 Ñam wolof (cuisine)
+        - 🎵 Mbalax ak musiik
+        - 🏥 Wergu yaram (santé)
+        - 📚 Jàngu (éducation)
+        - ⚽ Sport (làmb, futbal)
+        - 🇸🇳 Senegaal
+        Laaj ma lan la neex !
+
+  # --- FAQ RESPONSES ---
+  utter_faq/ask_name:
+    - text: "Salam, man la tiku Bot bu IAS. Maa ngi fi ngir ndimbal la ci wolof !"
+    - text: "Tuki Bot lañ may woye, waa IAS ñoo ma defar !"
+
+  utter_faq/ask_weather:
+    - text: "Jawu ji, dafa melni tay ndakaru naac bi tàgul."
+    - text: "Xamu ma fan yi di ñew, waye tay tëmp bi melni da don taw."
+    - text: "Tay jawu ji baax na ci Senegaal, waye xam naa ni nawet di ñëw."
+
+  utter_faq/ask_capabilities:
+    - text: >
+        Mën naa wax ak yow ci wolof ! Mën naa la wax ci cosaan, lëbb,
+        ñam, musiik, sport, wergu yaram, ak lu bari yeneen. Laaj ma !
+    - text: "Man mën naa tontu sa laaj yi ci wolof. Laaj ma lenn !"
+
+  utter_faq/ask_language:
+    - text: "Mangi wax wolof rekk ! Wolof mooy sama làkk."
+    - text: "Wolof la gëna xam. Dama bëgga ndimbal nit ñi ci wolof."
+
+  utter_faq/ask_creator:
+    - text: "PSW bu IAS moo ma defar. Dañu ma créer ngir wax wolof ak nit ñi !"
+    - text: "Waa IAS ñoo ma defar, PSW moo ma liggéey. Ab projet bu baax la !"
+
+  utter_faq2/how_can_you_help:
+    - text: "Dañuy wañi jëk yi ngir sunu client yi !"
+  utter_faq2/food_help:
+    - text: "Ño ngi jëgalu duñu jòxe lek si yoonu tuki bi."
+
+  # --- CHITCHAT RESPONSES ---
+  utter_chitchat/ask_howdoing:
+    - text: "Mangi fi alhamdulilah ! Ab bot laa waye kontaan naa ndax dama wax ak yow."
+    - text: "Mangi ci kàttan ! Yow naka ngay jëm ?"
+
+  utter_chitchat/tell_joke:
+    - text: "😄 Ndax xam nga lu tax jën bi rëy ? Ndax da fa gis tubaab bi di naaj ci ndox mi !"
+    - text: "😄 Mag yi daan wax : 'Ku bëgg ndox, wara na muñ taw.' Waye man ab bot laa, xamu ma taw 😅"
+    - text: "😄 Ab telefon laaj ab yeneen telefon : 'Naka ngay dem ?' — 'Mangi ci réseau !'"
+
+  utter_chitchat/ask_time:
+    - text: "Baal ma, mënuma wax la waxt bi ndax amuma montre 😅 Waye saa si yow mën nga ko gis !"
+
+  # --- FALLBACK ---
+  utter_default:
+    - text: "Baal ma, dëgguma sa wax bi. Ndax mën nga ko wax ci beneen yoon ?"
+    - text: "Xamu ma li ngay wax. Mën nga laaj ma ci beneen yoon."
+    - text: "Baal ma, mënuma tontu lolu. Jéemaal ko wax ci yeneen baat."
+    - text: "Hmm, dëgguma lu baax. Ndax mën nga ko simplifier ?"
+
+  utter_ask_rephrase:
+    - text: "Baal ma, mënuma dégg sa laaj bi. Ndax mën nga ko wax ci beneen yoon ?"
+
+actions:
+  - action_default_fallback
+  - action_give_proverb
+  - utter_greet
+  - utter_goodbye
+  - utter_thank_you
+  - utter_happy
+  - utter_cheer_up
+  - utter_did_that_help
+  - utter_iamabot
+  - utter_ok
+  - utter_teranga
+  - utter_proverb
+  - utter_wolof_culture
+  - utter_family
+  - utter_religion
+  - utter_health
+  - utter_covid
+  - utter_education
+  - utter_food
+  - utter_music
+  - utter_senegal
+  - utter_sport
+  - utter_help
+  - utter_default
+  - utter_ask_rephrase

@@ -1,0 +1,204 @@
+version: "3.1"
+
+stories:
+
+# --- HAPPY PATHS ---
+- story: salutation et bonne humeur
+  steps:
+    - user: |
+        na nga def
+      intent: greet
+    - action: utter_greet
+    - user: |
+        alhamdulilah ma ngi fi
+      intent: mood_great
+    - action: utter_happy
+
+- story: salutation puis au revoir
+  steps:
+    - user: |
+        salamlekum
+      intent: greet
+    - action: utter_greet
+    - user: |
+        ba beneen yoon
+      intent: goodbye
+    - action: utter_goodbye
+
+# --- SAD PATHS ---
+- story: triste puis aidé
+  steps:
+    - user: |
+        salam
+      intent: greet
+    - action: utter_greet
+    - user: |
+        dama tisé tay
+      intent: mood_unhappy
+    - action: utter_cheer_up
+    - action: utter_did_that_help
+    - user: |
+        waaw jërejëf
+      intent: affirm
+    - action: utter_happy
+
+- story: triste et pas aidé
+  steps:
+    - user: |
+        na nga def
+      intent: greet
+    - action: utter_greet
+    - user: |
+        sama xol bi nakari na
+      intent: mood_unhappy
+    - action: utter_cheer_up
+    - action: utter_did_that_help
+    - user: |
+        dèedèet
+      intent: deny
+    - action: utter_goodbye
+
+# --- CULTURE ---
+- story: demande teranga
+  steps:
+    - user: |
+        lan moy teranga ?
+      intent: ask_teranga
+    - action: utter_teranga
+
+- story: demande proverbe
+  steps:
+    - user: |
+        jox ma ab lëbbu wolof
+      intent: ask_proverb
+    - action: action_give_proverb
+
+- story: demande culture wolof
+  steps:
+    - user: |
+        wax ma ci cosaan wolof
+      intent: ask_wolof_culture
+    - action: utter_wolof_culture
+
+- story: demande famille
+  steps:
+    - user: |
+        naka la mbokk yi di mël ci wolof ?
+      intent: ask_family
+    - action: utter_family
+
+# --- THÉMATIQUES ---
+- story: demande religion
+  steps:
+    - user: |
+        wax ma ci diine ci senegaal
+      intent: ask_religion
+    - action: utter_religion
+
+- story: demande santé
+  steps:
+    - user: |
+        naka lañuy wara fey seen yaram ?
+      intent: ask_health
+    - action: utter_health
+
+- story: demande nourriture
+  steps:
+    - user: |
+        lan mooy ceebu jën ?
+      intent: ask_food
+    - action: utter_food
+
+- story: demande musique
+  steps:
+    - user: |
+        wax ma ci mbalax
+      intent: ask_music
+    - action: utter_music
+
+- story: demande sénégal
+  steps:
+    - user: |
+        wax ma ci senegaal
+      intent: ask_senegal
+    - action: utter_senegal
+
+- story: demande sport
+  steps:
+    - user: |
+        wax ma ci làmb ci senegaal
+      intent: ask_sport
+    - action: utter_sport
+
+# --- BOT ---
+- story: bot challenge
+  steps:
+    - user: |
+        ndax yaw chatbot nga ?
+      intent: bot_challenge
+    - action: utter_iamabot
+
+- story: demande aide
+  steps:
+    - user: |
+        ndimbal ma
+      intent: ask_help
+    - action: utter_help
+
+# --- CODE-SWITCHING ---
+- story: salutation code-switching
+  steps:
+    - user: |
+        bonjour na nga def
+      intent: greet
+    - action: utter_greet
+
+- story: nourriture code-switching
+  steps:
+    - user: |
+        c'est quoi le thiéboudiène ?
+      intent: ask_food
+    - action: utter_food
+
+# --- FAQ ---
+- story: faq nom du bot
+  steps:
+    - user: |
+        no tudu ?
+      intent: faq
+    - action: utter_faq
+
+- story: faq météo
+  steps:
+    - user: |
+        tay jawu ji numu mel ?
+      intent: faq
+    - action: utter_faq
+
+# --- REMERCIEMENT ---
+- story: remerciement
+  steps:
+    - user: |
+        jërejëf lool
+      intent: thank_you
+    - action: utter_thank_you
+
+# --- CONVERSATION MIXTE ---
+- story: conversation complète
+  steps:
+    - user: |
+        salam
+      intent: greet
+    - action: utter_greet
+    - user: |
+        wax ma ci cosaan wolof
+      intent: ask_wolof_culture
+    - action: utter_wolof_culture
+    - user: |
+        jërejëf
+      intent: thank_you
+    - action: utter_thank_you
+    - user: |
+        ba ci kanam
+      intent: goodbye
+    - action: utter_goodbye

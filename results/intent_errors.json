@@ -1,0 +1,90 @@
+[
+  {
+    "text": "sant bu baax",
+    "intent": "thank_you",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.7200714945793152
+    }
+  },
+  {
+    "text": "wax ma ci daara yi",
+    "intent": "ask_education",
+    "intent_prediction": {
+      "name": "ask_religion",
+      "confidence": 0.7703569531440735
+    }
+  },
+  {
+    "text": "yaw kan nga ?",
+    "intent": "faq",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.6399393081665039
+    }
+  },
+  {
+    "text": "ndax mën nga ndimbal ma ?",
+    "intent": "faq",
+    "intent_prediction": {
+      "name": "ask_help",
+      "confidence": 0.8499336242675781
+    }
+  },
+  {
+    "text": "asdfghjkl",
+    "intent": "nlu_fallback",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.01679566502571106
+    }
+  },
+  {
+    "text": "qwerty",
+    "intent": "nlu_fallback",
+    "intent_prediction": {
+      "name": "ask_education",
+      "confidence": 0.015232940204441547
+    }
+  },
+  {
+    "text": "12345",
+    "intent": "nlu_fallback",
+    "intent_prediction": {
+      "name": "ask_education",
+      "confidence": 0.03295699506998062
+    }
+  },
+  {
+    "text": "...",
+    "intent": "nlu_fallback",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.023085879161953926
+    }
+  },
+  {
+    "text": "???",
+    "intent": "nlu_fallback",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.02226712554693222
+    }
+  },
+  {
+    "text": "blablabla",
+    "intent": "nlu_fallback",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.013995430432260036
+    }
+  },
+  {
+    "text": "xxxxxxx",
+    "intent": "nlu_fallback",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.008535930886864662
+    }
+  }
+]

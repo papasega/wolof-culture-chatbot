@@ -1,0 +1,189 @@
+version: "3.1"
+
+stories:
+
+# --- HAPPY PATH ---
+- story: salutation et bonne humeur
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: mood_great
+    - action: utter_happy
+
+- story: salutation puis au revoir
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: goodbye
+    - action: utter_goodbye
+
+# --- SAD PATHS ---
+- story: triste puis aidé
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: mood_unhappy
+    - action: utter_cheer_up
+    - action: utter_did_that_help
+    - intent: affirm
+    - action: utter_happy
+
+- story: triste et pas aidé
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: mood_unhappy
+    - action: utter_cheer_up
+    - action: utter_did_that_help
+    - intent: deny
+    - action: utter_goodbye
+
+# --- CULTURE ---
+- story: demande teranga
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: ask_teranga
+    - action: utter_teranga
+
+- story: demande proverbe
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: ask_proverb
+    - action: action_give_proverb
+
+- story: demande culture puis proverbe
+  steps:
+    - intent: ask_wolof_culture
+    - action: utter_wolof_culture
+    - intent: ask_proverb
+    - action: action_give_proverb
+
+- story: demande culture wolof
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: ask_wolof_culture
+    - action: utter_wolof_culture
+
+- story: demande famille
+  steps:
+    - intent: ask_family
+    - action: utter_family
+
+# --- RELIGION ---
+- story: demande religion
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: ask_religion
+    - action: utter_religion
+
+# --- SANTÉ ---
+- story: demande santé
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: ask_health
+    - action: utter_health
+
+- story: demande covid
+  steps:
+    - intent: ask_covid
+    - action: utter_covid
+
+# --- ÉDUCATION ---
+- story: demande éducation
+  steps:
+    - intent: ask_education
+    - action: utter_education
+
+# --- NOURRITURE ---
+- story: demande nourriture
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: ask_food
+    - action: utter_food
+
+- story: nourriture directe
+  steps:
+    - intent: ask_food
+    - action: utter_food
+
+# --- MUSIQUE ---
+- story: demande musique
+  steps:
+    - intent: ask_music
+    - action: utter_music
+
+# --- SÉNÉGAL ---
+- story: demande sénégal
+  steps:
+    - intent: ask_senegal
+    - action: utter_senegal
+
+# --- SPORT ---
+- story: demande sport
+  steps:
+    - intent: ask_sport
+    - action: utter_sport
+
+# --- AIDE ---
+- story: demande aide
+  steps:
+    - intent: ask_help
+    - action: utter_help
+
+# --- CONVERSATIONS MIXTES ---
+- story: salutation culture nourriture au revoir
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: ask_wolof_culture
+    - action: utter_wolof_culture
+    - intent: ask_food
+    - action: utter_food
+    - intent: thank_you
+    - action: utter_thank_you
+    - intent: goodbye
+    - action: utter_goodbye
+
+- story: salutation santé proverbe au revoir
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: ask_health
+    - action: utter_health
+    - intent: ask_proverb
+    - action: action_give_proverb
+    - intent: goodbye
+    - action: utter_goodbye
+
+- story: aide puis questions
+  steps:
+    - intent: ask_help
+    - action: utter_help
+    - intent: ask_senegal
+    - action: utter_senegal
+    - intent: thank_you
+    - action: utter_thank_you
+
+- story: bot challenge puis culture
+  steps:
+    - intent: bot_challenge
+    - action: utter_iamabot
+    - intent: ask_teranga
+    - action: utter_teranga
+
+- story: salutation musique sport au revoir
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: ask_music
+    - action: utter_music
+    - intent: ask_sport
+    - action: utter_sport
+    - intent: goodbye
+    - action: utter_goodbye
