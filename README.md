@@ -4,6 +4,8 @@ Un chatbot conversationnel en **wolof** (avec support du code-switching wolof-fr
 
 Ce bot est conçu pour interagir en wolof sur des sujets liés à la **culture sénégalaise** : teranga, proverbes, cuisine, musique, sport, santé, éducation, religion, géographie, et plus encore.
 
+![Chatbot Wolof](./assets/chatbo_wolof_psw.png)
+
 ## Qu'est-ce que Rasa ?
 
 [Rasa](https://rasa.com/) est un framework open-source de construction de chatbots conversationnels. Il repose sur deux composants principaux :
@@ -97,19 +99,21 @@ rasa run --enable-api --cors "*"
 ## Structure du projet
 
 ```
-Chatbot_Wolof/
-├── config.yml          # Pipeline NLU + policies (Rasa 3.x)
-├── domain.yml          # Intents, entities, slots, responses, actions
+wolof-culture-chatbot/
+├── config.yml              # Pipeline NLU + policies (Rasa 3.x)
+├── domain.yml              # Intents, entities, slots, responses, actions
 ├── data/
-│   ├── nlu.yml         # Données d'entraînement NLU (wolof + code-switching)
-│   ├── stories.yml     # Parcours conversationnels
-│   └── rules.yml       # Règles de conversation
+│   ├── nlu.yml             # Données d'entraînement NLU (wolof + code-switching)
+│   ├── stories.yml         # Parcours conversationnels
+│   └── rules.yml           # Règles de conversation
 ├── actions/
-│   └── actions.py      # Custom actions (proverbes, fallback)
+│   └── actions.py          # Custom actions (proverbes, fallback)
 ├── tests/
-│   └── test_stories.yml # Tests end-to-end en wolof
-├── endpoints.yml       # Configuration des endpoints
-└── credentials.yml     # Canaux de communication
+│   └── test_stories.yml    # Tests end-to-end en wolof
+├── results/                # Rapports JSON générés par rasa test (non versionné)
+├── model_evaluation.md     # Historique des résultats d'entraînement et de tests
+├── endpoints.yml           # Configuration des endpoints
+└── credentials.yml         # Canaux de communication
 ```
 
 ## Tester le bot
@@ -124,6 +128,19 @@ rasa test nlu --cross-validation
 # Test interactif
 rasa interactive
 ```
+
+## Résultats d'évaluation
+
+Les résultats complets d'entraînement et de tests (2022 → 2026) sont documentés dans [`model_evaluation.md`](./model_evaluation.md).
+
+**Résumé des performances (mars 2026) :**
+
+| Niveau | Métrique | Score |
+|---|---|---|
+| Conversation (stories) | Accuracy | **90.9%** — 20/22 |
+| Dialogue (actions) | Accuracy | **97.9%** — 62/64 |
+| Dialogue (actions) | F1-Score | **0.971** |
+| NLU Intent | ~Accuracy | **~99.3%** — 567/570 |
 
 ## Pipeline NLU
 
