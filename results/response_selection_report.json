@@ -8,6 +8,34 @@
       "": 9
     }
   },
+  "faq/ask_name": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 14,
+    "confused_with": {}
+  },
+  "chitchat/tell_joke": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 13,
+    "confused_with": {}
+  },
+  "faq/ask_weather": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 16,
+    "confused_with": {}
+  },
+  "faq/ask_capabilities": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 10,
+    "confused_with": {}
+  },
   "chitchat/ask_time": {
     "precision": 1.0,
     "recall": 1.0,
@@ -24,11 +52,11 @@
       "": 10
     }
   },
-  "faq/ask_weather": {
+  "chitchat/ask_howdoing": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 16,
+    "support": 13,
     "confused_with": {}
   },
   "faq/ask_language": {
@@ -43,34 +71,6 @@
     "recall": 1.0,
     "f1-score": 1.0,
     "support": 8,
-    "confused_with": {}
-  },
-  "chitchat/tell_joke": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 13,
-    "confused_with": {}
-  },
-  "faq/ask_name": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 14,
-    "confused_with": {}
-  },
-  "chitchat/ask_howdoing": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 13,
-    "confused_with": {}
-  },
-  "faq/ask_capabilities": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 10,
     "confused_with": {}
   },
   "micro avg": {

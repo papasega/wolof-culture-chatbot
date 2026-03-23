@@ -26,6 +26,9 @@ intents:
   - ask_music
   - ask_senegal
   - ask_sport
+  - ask_science
+  - ask_maths
+  - ask_commerce
   - ask_help
   - faq:
       is_retrieval_intent: true
@@ -226,6 +229,38 @@ responses:
         (Lions de la Téranga) dañu gën Coupe d'Afrique ci 2022 ! Sadio Mané
         moo gëna am tur ci futbal Senegaal.
 
+  # --- SCIENCE ---
+  utter_science:
+    - text: >
+        Science mooy xam-xam bi ñuy jéem a gën a xam àddina si. Am na physique,
+        chimie, ak biologie. Ci ekool yi, dañuy jéem jàngale xam-xamu science ngir
+        gën a xam naka la mbir yi di déme ci sunu àddina.
+    - text: >
+        La science (xam-xam) dafa am solo lool ci jamono jii. Dafa ñuy may xam
+        naka la yaram di doxé, naka la asamaan si di doxé, ak lépp lu ñu lëngoo.
+
+  # --- MATHÉMATIQUES ---
+  utter_maths:
+    - text: >
+        Mathématiques (xayma) mooy xam-xam bi lëngoo ak lim yi, calcul yi ak
+        forme yi. Ci xayma lañuy mëne a xam ñaata lañu am, naka lañuy séddale,
+        te dafa am solo ci koom-koom ak ci liggéey yépp.
+    - text: >
+        Ci wolof, xayma (calcul/mathématiques) dafa am njariñ lu rëy. Mag ñi
+        dañu daan xayma ci seen bopp ngir xam seen àqu kër, seen mbay, walla
+        seen njaay. Mbirum lim ak xam-xamu wone la.
+
+  # --- COMMERCE ---
+  utter_commerce:
+    - text: >
+        Njaay mi (commerce) dafa bari ci Senegaal. Nit ñi dañuy jaay ci marse
+        yu mag ni Sandaga walla Colobane. Commerce mooy yëngu-yëngu bi tax ñu bari
+        di mën a dund ak di yor seen njaboot.
+    - text: >
+        Ci Senegaal, jënd ak jaay (le commerce) dafa nekk mbir mu am solo.
+        Koom-koom (l'économie) dafa sukkandiku ci jaaykat yi ak liggéeykat yi.
+        Nit ñi dañuy bëgg liggéey ci commerce ngir am xaalis ak kàttan.
+
   # --- AIDE ---
   utter_help:
     - text: >
@@ -315,6 +350,9 @@ actions:
   - utter_music
   - utter_senegal
   - utter_sport
+  - utter_science
+  - utter_maths
+  - utter_commerce
   - utter_help
   - utter_default
   - utter_ask_rephrase

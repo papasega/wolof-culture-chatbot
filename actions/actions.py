@@ -7,7 +7,7 @@ from rasa_sdk.events import UserUtteranceReverted
 
 
 class ActionGiveProverb(Action):
-    """Action pour donner un proverbe wolof aléatoire avec sa signification."""
+    """Action to give a random Wolof proverb with its meaning."""
 
     def name(self) -> Text:
         return "action_give_proverb"
@@ -90,7 +90,7 @@ class ActionGiveProverb(Action):
 
 
 class ActionDefaultFallback(Action):
-    """Action de repli quand le bot ne comprend pas."""
+    """Fallback action when the bot does not understand."""
 
     def name(self) -> Text:
         return "action_default_fallback"

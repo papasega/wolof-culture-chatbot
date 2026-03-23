@@ -1,15 +1,17 @@
-# 📊 Résultats d'Évaluation du Modèle — Chatbot Wolof
+# 📊 Résultats d'Évaluation du Modèle : Chatbot Wolof
+
+🇬🇧 [Read this in English](./MODEL_EVALUATION_en.md)
 
 Ce fichier documente les résultats d'entraînement et de tests du chatbot au fil du temps.
 Chaque nouvelle session `rasa train` + `rasa test` doit être consignée ici.
 
 ---
 
-## ✅ Évaluation 2026 — Version 2.0 (Rasa 3.6.21+)
+## ✅ Évaluation 2026 : Version 2.0 (Rasa 3.6.21+)
 
-**Date :** 22 mars 2026
+**Date :** 23 mars 2026
 **Modèle :** `20260322-100129-achromatic-run.tar.gz`
-**Données :** 570 exemples NLU · 26 intents · 22 stories de test
+**Données :** 632 exemples NLU · 29 intents · 22 stories de test
 
 ---
 
@@ -35,17 +37,18 @@ Chaque nouvelle session `rasa train` + `rasa test` doit être consignée ici.
 
 ---
 
-### 🧠 Classification NLU — Intent Recognition
+### 🧠 Classification NLU : Intent Recognition
 
-**Corpus :** 570 exemples · 26 intents
+**Corpus :** 632 exemples · 29 intents
 
-La matrice de confusion montre une quasi-diagonale parfaite, avec deux points d'attention :
+La matrice de confusion montre une quasi-diagonale parfaite avec une précision de **98.3%** (621/632 exemples corrects). Quelques points d'attention mineurs :
 
-- **Intent index 6** : 1 exemple mal classifié (15/16 corrects)
-- **Intent index 23** : 7 exemples **tous mal classifiés** vers l'intent index 16 → confusion entre deux intents proches à corriger
-- **Intent index 9** et **25** : 1 erreur chacun (mineure)
+- **nlu_fallback** : 7 exemples mal classifiés vers `mood_great`, `ask_teranga` et `bot_challenge` (courant pour le fallback).
+- **ask_education** : 1 confusion avec `ask_religion`.
+- **faq** : 1 confusion avec `bot_challenge`.
+- **ask_help** : 1 confusion avec `faq`.
 
-> **Action recommandée :** différencier davantage les exemples NLU des intents 16 et 23.
+> **Action recommandée :** réviser le seuil de fallback et diversifier légèrement les exemples pour `ask_education` et `faq`.
 
 ---
 
@@ -81,7 +84,7 @@ results/
 
 ---
 
-## 📜 Évaluation 2022 — Version 1.0 (Rasa 3.x — Labs IAS)
+## 📜 Évaluation 2022 : Version 1.0 (Rasa 3.x, Labs IAS)
 
 **Date :** 14 août 2022
 **Données :** 114 exemples NLU · cross-validation 5 folds · 37 exemples response selection
@@ -96,7 +99,7 @@ results/
 | F1-Score | **1.000** ± 0.000 | **0.861** ± 0.033 |
 | Précision | **1.000** ± 0.000 | **0.886** ± 0.042 |
 
-> Le modèle était parfait sur les données d'entraînement (overfitting probable dû au faible volume de données — 114 exemples seulement).
+> Le modèle était parfait sur les données d'entraînement (overfitting probable dû au faible volume de données, 114 exemples seulement).
 > La performance en test (F1 = 0.861) était correcte pour un premier prototype.
 
 ---
@@ -105,14 +108,12 @@ results/
 
 | Métrique | 2022 (v1.0) | 2026 (v2.0) | Évolution |
 |---|---|---|---|
-| Exemples NLU | 114 | 570 | **+400%** ✅ |
-| Intents | ~8 | 26 | **+225%** ✅ |
-| Test Accuracy (intent) | 0.868 | ~0.993* | **+12.6 pts** ✅ |
+| Exemples NLU | 114 | 632 | **+454%** ✅ |
+| Intents | ~8 | 29 | **+262%** ✅ |
+| Test Accuracy (intent) | 0.868 | 0.983 | **+11.5 pts** ✅ |
 | Response selection | 37 ex. | 107 ex. | **+189%** ✅ |
-| Stories testées | — | 22 | nouveau ✅ |
-
-*\*estimé à partir de la matrice de confusion : ~567/570 corrects*
+| Stories testées | N/A | 22 | nouveau ✅ |
 
 ---
 
-**Auteur** : [Papa Sega WADE](https://papasegawade.com) — Labs
+**Auteur** : [Papa Sega WADE](https://papasegawade.com), Labs

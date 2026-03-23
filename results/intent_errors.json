@@ -1,10 +1,10 @@
 [
   {
     "text": "sant bu baax",
-    "intent": "thank_you",
+    "intent": "mood_great",
     "intent_prediction": {
-      "name": "mood_great",
-      "confidence": 0.7200714945793152
+      "name": "thank_you",
+      "confidence": 0.6555642485618591
     }
   },
   {
@@ -12,7 +12,7 @@
     "intent": "ask_education",
     "intent_prediction": {
       "name": "ask_religion",
-      "confidence": 0.7703569531440735
+      "confidence": 0.5111799836158752
     }
   },
   {
@@ -20,15 +20,15 @@
     "intent": "faq",
     "intent_prediction": {
       "name": "bot_challenge",
-      "confidence": 0.6399393081665039
+      "confidence": 0.8636190295219421
     }
   },
   {
     "text": "ndax mën nga ndimbal ma ?",
-    "intent": "faq",
+    "intent": "ask_help",
     "intent_prediction": {
-      "name": "ask_help",
-      "confidence": 0.8499336242675781
+      "name": "faq",
+      "confidence": 0.9639935493469238
     }
   },
   {
@@ -36,23 +36,23 @@
     "intent": "nlu_fallback",
     "intent_prediction": {
       "name": "mood_great",
-      "confidence": 0.01679566502571106
+      "confidence": 0.004154388792812824
     }
   },
   {
     "text": "qwerty",
     "intent": "nlu_fallback",
     "intent_prediction": {
-      "name": "ask_education",
-      "confidence": 0.015232940204441547
+      "name": "mood_great",
+      "confidence": 0.005950368940830231
     }
   },
   {
     "text": "12345",
     "intent": "nlu_fallback",
     "intent_prediction": {
-      "name": "ask_education",
-      "confidence": 0.03295699506998062
+      "name": "bot_challenge",
+      "confidence": 0.003239248413592577
     }
   },
   {
@@ -60,15 +60,15 @@
     "intent": "nlu_fallback",
     "intent_prediction": {
       "name": "mood_great",
-      "confidence": 0.023085879161953926
+      "confidence": 0.005922818556427956
     }
   },
   {
     "text": "???",
     "intent": "nlu_fallback",
     "intent_prediction": {
-      "name": "mood_great",
-      "confidence": 0.02226712554693222
+      "name": "ask_teranga",
+      "confidence": 0.0036426293663680553
     }
   },
   {
@@ -76,15 +76,15 @@
     "intent": "nlu_fallback",
     "intent_prediction": {
       "name": "mood_great",
-      "confidence": 0.013995430432260036
+      "confidence": 0.027207985520362854
     }
   },
   {
     "text": "xxxxxxx",
     "intent": "nlu_fallback",
     "intent_prediction": {
-      "name": "mood_great",
-      "confidence": 0.008535930886864662
+      "name": "ask_teranga",
+      "confidence": 0.004100274294614792
     }
   }
 ]

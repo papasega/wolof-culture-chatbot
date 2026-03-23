@@ -324,6 +324,11 @@ nlu:
     - ndax mën nga ma wax ci faju yaram ?
     - naka lañuy wara lekk ngir am kàttan ?
     - wax ma ci garabu àddina
+    - ndax am na faj ci aada wolof ?
+    - wax ma ci mbirum wergu yaram ak faj
+    - naka la mag ñi daan fajé seen feebar ?
+    - ndax xam nga garab yu baax ci yaram ?
+    - lu moy njariñu wergu yaram ci dundu ?
 
 - intent: ask_covid
   examples: |
@@ -544,6 +549,66 @@ nlu:
     - ndax senegaal gën na coupe d'afrique ?
     - naka la bàtaarë yi di dem ?
     - wax ma ci sport ci senegaal
+
+# =============================================
+# SCIENCE
+# =============================================
+
+- intent: ask_science
+  examples: |
+    - lan mooy xam-xam ci science ?
+    - wax ma ci science
+    - ndax mën nga ma wax ci science ?
+    - naka la science di liggéey ?
+    - lan lañuy jàng ci science ?
+    - wax ma ci mbirum xam-xam
+    - ndax am na xam-xam bu rëy ci wolof ?
+    - naka la nit ñi di jéem xam àddina ?
+    - lan mooy physique ?
+    - wax ma ci chimie ak mbir yi
+    - science naka lañu koy jàng ci senegaal ?
+    - lu moy njariñu science ?
+    - ndax xam nga lenn ci science ?
+
+# =============================================
+# MATHÉMATIQUES
+# =============================================
+
+- intent: ask_maths
+  examples: |
+    - lan mooy mathématiques ?
+    - wax ma ci xam-xamu wone ak xayma ?
+    - naka lañuy xayma ci wolof ?
+    - ndax mën nga wax ci math ?
+    - wax ma ci calcul
+    - lan la mathématiques di jariñ ?
+    - naka lañuy jàng math ci ekool yi ?
+    - ndax am na xayma ci wolof ?
+    - wax ma ci mbirum lim yi
+    - naka lañuy tontu probleme math ?
+    - ndax xayma yomb na ?
+    - lan mooy geometrie ?
+    - jox ma ndimbal ci mathématiques
+
+# =============================================
+# COMMERCE
+# =============================================
+
+- intent: ask_commerce
+  examples: |
+    - wax ma ci njaay mi ak mbirum commerce
+    - naka lañuy jaay ci senegaal ?
+    - lan mooy jaay ak jënd ?
+    - ndax commerce dafa am solo ?
+    - wax ma ci marse yi ci senegaal
+    - naka la commerce di dem tay ?
+    - lan mooy koom-koom ?
+    - wax ma waxu koppar ak xalis
+    - naka la nit ñi di amee xaalis ci njaay ?
+    - wax ma ci liggéeyu jaaykat yi
+    - ndax am na liggéey ci commerce ?
+    - naka la njaay mi di déme ci dëkk bi ?
+    - wax ma ci marse sandaga
 
 # =============================================
 # CHITCHAT / CONVERSATION LIBRE
@@ -815,3 +880,30 @@ nlu:
     - fais moi rire way
     - une blague en wolof s'il te plaît
     - wax ma un truc marrant
+
+- intent: ask_science
+  examples: |
+    - c'est quoi la science
+    - parle moi de la science
+    - explique moi la science
+    - wax ma ci la science
+    - la science ci senegaal naka la
+    - que signifie science
+
+- intent: ask_maths
+  examples: |
+    - c'est quoi les mathématiques
+    - parle moi des maths
+    - les maths c'est difficile ?
+    - wax ma ci les mathématiques
+    - explique moi le calcul
+    - ndax am nga xam-xam ci les maths
+
+- intent: ask_commerce
+  examples: |
+    - parle moi du commerce
+    - le commerce au senegal naka la
+    - c'est quoi le commerce
+    - wax ma ci le business
+    - comment se passe le marché
+    - le business et l'économie ci senegal

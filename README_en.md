@@ -1,0 +1,211 @@
+# 🇸🇳 Chatbot Wolof : Bot bu Wolof 2020-2023
+
+🇫🇷 [Lire en français](./Readme.md)
+
+A conversational chatbot in **Wolof** (with Wolof-French code-switching support) built with [Rasa 3.x](https://rasa.com/).
+
+This bot is designed to interact in Wolof on topics related to **Senegalese culture**: Teranga, proverbs, cuisine, music, sports, health, education, religion, geography, and more.
+
+![Chatbot Wolof](./assets/chatbo_wolof_psw.png)
+
+## What is Rasa?
+
+[Rasa](https://rasa.com/) is an open-source framework for building conversational chatbots. It relies on two main components:
+
+- **Rasa NLU** *(Natural Language Understanding)*: understands what the user is saying, classifies the **intent**, and extracts **entities** (important keywords).
+- **Rasa Core**: manages the **dialogue**. It decides which action to take or response to give based on the conversation history, using stories, rules, and policies.
+
+Unlike rule-based chatbots (if/else), Rasa uses **supervised machine learning**: it learns from annotated examples to generalize to new phrasing.
+
+## Why this chatbot is different from an LLM and why it is more reliable
+
+An **LLM (Large Language Model)** like GPT-4 or Claude is a **probabilistic** model: it generates the most likely response based on its training over billions of texts. This makes it very fluent... but also **unpredictable**:
+
+- It can **hallucinate**: invent Wolof cultural facts that don't exist
+- It can **drift** from the topic or answer out of context
+- It is **non-deterministic**: two identical calls can yield two different answers
+- It is difficult to **control** and **audit** within a specific framework
+
+This Rasa chatbot adopts a **deterministic and bounded** approach:
+
+| Criterion | Rasa Chatbot (this project) | LLM (GPT, Claude…) |
+| --- | --- | --- |
+| **Responses** | Manually defined and validated | Probabilistically generated |
+| **Cultural reliability** | ✅ Every response is verified | ⚠️ Risk of hallucination |
+| **Dialogue control** | ✅ Explicit stories + rules | ❌ Hard to constrain |
+| **Determinism** | ✅ Predictable behavior | ❌ Non-deterministic |
+| **Inference cost** | ✅ Lightweight, local, free | ❌ Paid API, latency |
+| **Low-resource language (Wolof)** | ✅ Trained on targeted data | ⚠️ Limited Wolof data in training |
+
+> **For a specific cultural domain like Wolof**, it is better to have a bot that answers *accurately but is limited*, rather than an LLM that is *fluent but potentially incorrect*.
+
+## Features
+
+- **30+ intents** covering Wolof culture, daily life, and FAQs
+- **Wolof-French code-switching** (e.g., "bonjour na nga def", "c'est quoi le thiéboudiène ?")
+- **Wolof proverbs** (lëbb) with meanings, generated randomly
+- **Smart fallback** when the bot doesn't understand
+- **Multiple responses** for each intent (natural variety)
+- **Cultural themes**: teranga, cosaan, njaboot, mbalax, ceebu jën, làmb...
+
+## Main Intents
+
+| Intent | Description | Example |
+| -------- | ------------- | --------- |
+| `greet` | Greetings | "na nga def", "salamlekum" |
+| `ask_teranga` | Wolof hospitality | "lan moy teranga ?" |
+| `ask_proverb` | Wolof proverbs | "jox ma ab lëbb" |
+| `ask_food` | Senegalese cuisine | "naka lañuy togg ceebu jën ?" |
+| `ask_music` | Music (mbalax) | "wax ma ci mbalax" |
+| `ask_sport` | Sports (wrestling, football) | "wax ma ci làmb" |
+| `ask_senegal` | Senegal geography | "wax ma ci senegaal" |
+| `ask_health` | Health | "naka lañuy wara fey seen yaram ?" |
+| `ask_education` | Education | "naka la jàngu yi di dem ?" |
+| `ask_religion` | Religion | "wax ma ci diine ci senegaal" |
+| `chitchat/*` | Small talk | "naka ngay jëm ?", "wax ma ab rëy" |
+
+## Prerequisites
+
+- Python 3.8 - 3.10
+- Rasa 3.x (`pip install rasa==3.6.20`)
+- Rasa SDK (`pip install rasa-sdk`)
+
+## Installation
+
+```bash
+# Create a virtual environment
+python3 -m venv venv
+source venv/bin/activate  # Linux/Mac
+# or: venv\Scripts\activate  # Windows
+
+# Install dependencies
+pip install rasa==3.6.20 rasa-sdk
+
+# Train the model
+rasa train
+
+# Run the action server (in a separate terminal)
+rasa run actions
+
+# Test the bot in the command line
+rasa shell
+
+# Or test via REST API
+rasa run --enable-api --cors "*"
+```
+
+## Project Structure
+
+```text
+wolof-culture-chatbot/
+├── config.yml              # NLU pipeline + policies (Rasa 3.x)
+├── domain.yml              # Intents, entities, slots, responses, actions
+├── data/
+│   ├── nlu.yml             # NLU training data (Wolof + code-switching)
+│   ├── stories.yml         # Conversational flows
+│   └── rules.yml           # Conversation rules
+├── actions/
+│   └── actions.py          # Custom actions (proverbs, fallback)
+├── tests/
+│   └── test_stories.yml    # End-to-end Wolof tests
+├── results/                # JSON reports generated by rasa test (git-ignored)
+├── model_evaluation.md     # Training and testing evaluation history
+├── endpoints.yml           # Endpoints configuration
+└── credentials.yml         # Communication channels
+```
+
+## Testing the Bot
+
+```bash
+# End-to-end tests
+rasa test
+
+# NLU evaluation with cross-validation
+rasa test nlu --cross-validation
+
+# Interactive testing
+rasa interactive
+```
+
+## Evaluation Results
+
+Full training and testing results (2022 → 2026) are documented in [`model_evaluation.md`](./model_evaluation.md).
+
+**Performance Summary (March 2026):**
+
+| Level | Metric | Score |
+| --- | --- | --- |
+| Conversation (stories) | Accuracy | **90.9%**, 20/22 |
+| Dialogue (actions) | Accuracy | **97.9%**, 62/64 |
+| Dialogue (actions) | F1-Score | **0.971** |
+| NLU Intent | ~Accuracy | **~99.3%**, 567/570 |
+
+## NLU Pipeline
+
+- `WhitespaceTokenizer`: Space-based tokenization (suited for Wolof)
+- `RegexFeaturizer`: Regex-based features
+- `LexicalSyntacticFeaturizer`: Lexical and syntactic features
+- `CountVectorsFeaturizer` (word + char n-grams): Robust for Wolof
+- `DIETClassifier`: Intent classification and entity extraction
+- `ResponseSelector`: FAQ and chitchat response selection
+- `FallbackClassifier`: Out-of-scope handling
+
+## Contributing
+
+Contributions are welcome! You can:
+
+- Add more NLU examples in Wolof
+- Add new intents and themes
+- Enrich the proverbs in `actions.py`
+- Improve responses in `domain.yml`
+- Add more code-switching examples
+
+## Limitations of the classic chatbot
+
+This chatbot, like any Rasa-based system, has **inherent limitations of the classic supervised approach** that are important to know.
+
+### 1. Total reliance on training data
+
+Every intent, use case, and phrasing must be **manually written** with annotated examples. If a user asks a question that hasn't been anticipated, the bot falls back into fallback logic. It cannot improvise or generalize beyond what was explicitly programmed.
+
+> The more topics the bot covers, the more data is required. It's a continuous and costly effort.
+
+### 2. Fragility to new phrasing
+
+The model learns to recognize patterns from the provided examples. A slightly different phrasing from the training data might not be recognized, especially in an **agglutinative** language like Wolof that is poorly standardized in writing.
+
+### 3. Static responses
+
+All responses are defined tightly in `domain.yml`. The bot cannot **adapt its speech** to the real context of the conversation. It selects a response from the predicted ones, without dynamically reformatting or enriching them.
+
+### 4. Mandatory manual maintenance
+
+Every evolution of the bot (new topic, new phrasing, response correction) requires updating the data, doing a **full retraining** of the model, and running regression tests. There is no automated learning in production.
+
+### 5. No deep language understanding of Wolof
+
+The pipeline uses `WhitespaceTokenizer`, a simple split by spaces. There is no **pre-trained language model in Wolof** (like BERT for English or CamemBERT for French) yet, which limits fine-grained semantic comprehension of the language.
+
+---
+
+## Areas for Improvement
+
+These limitations open concrete research avenues to evolve the project:
+
+### Axis 1: Data Enrichment
+
+- Collect and annotate a broader and more diverse **Wolof corpus**
+- Cover more dialects and regional variations of Wolof
+- Integrate more examples of Wolof-French-English code-switching
+
+### Axis 2: Linguistic Representation (Research)
+
+- Train **Wolof word embeddings** (FastText) on a large corpus of Wolof texts
+- **Fine-tune a multilingual model** (XLM-R, mBERT) on annotated Wolof data for better semantic understanding
+- **Build an annotated Wolof corpus** (NER tasks, POS tagging) to equip the African NLP community
+
+> These axes align with the dynamics of initiatives like [Masakhane](https://www.masakhane.io/) and [AfroNLP](https://afronlp.github.io/), which work to equip African languages with NLP resources.
+
+---
+
+**Author**: [Papa Sega WADE](https://papasegawade.com), Labs
